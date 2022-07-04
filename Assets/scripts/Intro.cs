@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//GIT GIT GIT !
 public class Intro: MonoBehaviour {
     float fade;
     SpriteRenderer sp;
