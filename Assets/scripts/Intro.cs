@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 //GIT GIT GIT !
@@ -9,14 +7,14 @@ public class Intro: MonoBehaviour {
     Color color;
     bool bFadeIn = false;
 
-    GameObject SceneManager;
+    GameObject m_introSceneManager;
 
     // Start is called before the first frame update
     void Start() {
         fade = 0f;
         sp = GetComponent<SpriteRenderer>();
         color = new Color(1f, 1f, 1f, 0f);
-        SceneManager = GameObject.Find("SceneManager");
+        m_introSceneManager = GameObject.Find("IntroSceneManager");
     }
 
     // Update is called once per frame
@@ -30,7 +28,10 @@ public class Intro: MonoBehaviour {
         }
         else {
             fade -= (0.45f * Time.deltaTime);
-            if (fade < 0f) { fade = 0f;  SceneManager.GetComponent<SceneManager>().introisover(); }
+            if (fade < 0f) {
+                fade = 0f;
+                m_introSceneManager.GetComponent<IntroSceneManager>().introIsOver();
+            }
         }
     }
 }
